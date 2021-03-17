@@ -5,11 +5,14 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> Beranda</a>
+                        <a  class="active-menu" href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> Beranda</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-archive"></i> Menu Barang<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url(); ?>satuan"><i class="fa fa-list-ol"></i> Satuan</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>kategori"><i class="fa fa-list-ul"></i> Kategori</a>
                             </li>
@@ -17,10 +20,24 @@
                                 <a href="<?php echo base_url(); ?>barang"><i class="fa fa-archive"></i> Data Barang</a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>supplier"><i class="fa fa-users"></i> Supplier</a>
                     </li> 
                     <li>
-                        <a href="<?php echo base_url(); ?>ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="<?php echo base_url(); ?>barangmasuk"><i class="fa fa-truck"></i> Barang Masuk</a>
                     </li> 
+                    <li>
+                        <a href="#"><i class="fa fa-shopping-cart"></i> Issue Barang<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a  href="<?php echo base_url(); ?>issue"><i class="fa fa-shopping-cart"></i> Issue Reguler</a></a>
+                            </li>
+                            <li>
+                                <a  href="<?php echo base_url(); ?>issuebc"><i class="fa fa-shopping-cart"></i> Issue Backcarge</a></a>
+                            </li>
+                        </ul>
+                    </li>
 					 
 					 <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>

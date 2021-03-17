@@ -2,7 +2,6 @@
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
-
                     <li>
                         <a href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> Beranda</a>
                     </li>
@@ -109,8 +108,7 @@
 		</ol> 
 	</div>
 		
-    <div id="page-inner" style="margin-top: -30px;"> 
-           
+    <div id="page-inner" style="margin-top: -30px;">    
         <div class="row">
             <div class="col-md-12">
                 <!-- Advanced Tables -->
@@ -264,7 +262,6 @@
                     </div>
                 </div>
                 </form>
-
             </div>
         </div>
             <!-- /. ROW  -->

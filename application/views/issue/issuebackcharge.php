@@ -77,9 +77,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li>
                 </ul>
 
             </div>
@@ -139,7 +136,7 @@
                                             <a data-toggle="modal" data-target="#EditIssue" data-popup="tooltip" data-placement="top"  class="btn btn-xs btn-info" > <i class="fa fa-edit"></i>
                                             </a>
                                             <a href="javascript:;" data-id="<?php echo $row->id_bc; ?>"
-                                            data-nama="<?php echo $row->nm_brg; ?>" data-toggle="modal" data-target="#HapusKategori" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> </a>
+                                            data-nama="<?php echo $row->nm_brg; ?>" data-toggle="modal" data-target="#Hapusbc<?php echo $row->id_bc; ?>" class="btn btn-xs btn-danger"><i class="fa fa-times-circle"></i> </a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -206,8 +203,7 @@
                         </div>
                     </div>
                 </div>
-                </form>
-                
+                </form>               
 
                 <!--Modal Edit-->
                 <?php foreach($issuebc as $row): ?>
@@ -274,7 +270,7 @@
                 <!--Modal Hapus-->
                 <?php foreach($issuebc as $row): ?>
                 <form method="post" action="<?php echo base_url(); ?>issuebc/deleteIssue">
-                <div class="modal fade" id="HapusKategori" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="Hapusbc<?php echo $row->id_bc; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header" style="background-color: #333333; color: #ffffff;">
@@ -282,11 +278,11 @@
                                 <h4 class="modal-title" id="myModalLabel" id="judul"><i class="fa fa-question-circle"></i> KONFIRMASI</h4>
                             </div>
                             <div class="modal-body">
-                                <input type="text" name="id_hapus" id="id_hapus">
-                                <input type="text" name="id_brg" value="<?php echo $row->id_brg ?>">
-                                <input type="text" name="jml" value="<?php echo $row->jml_bc ?>">
+                                <input type="hidden" name="id_hapus" id="id_hapus" value="<?php echo $row->id_bc; ?>">
+                                <input type="hidden" name="id_brg" value="<?php echo $row->id_brg ?>">
+                                <input type="hidden" name="jml" value="<?php echo $row->jml_bc ?>">
                                 
-                                <h4 class="alert alert-info">Apakah Anda Yakin akan menghapus data <input type="text" name="nama_hapus" id="nama_hapus" readonly="readonly" class="btn btn-sm btn-danger">?</h4>
+                                <h4 class="alert alert-info">Apakah Anda Yakin akan menghapus data <label class="text-danger"><?php echo $row->nm_brg; ?></label>?</h4>
                             </div>
                             <div class="modal-footer" style="background-color: #333333; color: #ffffff;">
                                 <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="fa fa-times-circle"></i> BATAL</button>
@@ -297,7 +293,6 @@
                 </div>
                 </form>
                 <?php endforeach; ?>
-
             </div>
         </div>
             <!-- /. ROW  -->
