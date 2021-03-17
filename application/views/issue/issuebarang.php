@@ -282,9 +282,9 @@
                                 <h4 class="modal-title" id="myModalLabel" id="judul"><i class="fa fa-question-circle"></i> KONFIRMASI</h4>
                             </div>
                             <div class="modal-body">
-                                <input type="text" name="id_hapus" id="id_hapus" value="<?php echo $row->id_issue; ?>">
-                                <input type="text" name="id_brg" value="<?php echo $row->id_brg ?>">
-                                <input type="text" name="jml" value="<?php echo $row->jml_issue ?>">
+                                <input type="hidden" name="id_hapus" id="id_hapus" value="<?php echo $row->id_issue; ?>">
+                                <input type="hidden" name="id_brg" value="<?php echo $row->id_brg ?>">
+                                <input type="hidden" name="jml" value="<?php echo $row->jml_issue ?>">
                                 
                                 <h4 class="alert alert-info">Apakah Anda Yakin akan menghapus data <label class="text-danger"><?php echo $row->nm_brg; ?></label>?</h4>
                             </div>
