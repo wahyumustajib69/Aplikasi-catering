@@ -5,6 +5,9 @@ class Barangmasuk extends CI_Controller{
 	
 	public function __construct(){
 		parent::__construct();
+		if($this->session->userdata('status') != 'login'){
+			redirect(base_url('login'));
+		}
 		$this->load->model('Barangmasuk_model');
 	}
 
@@ -13,7 +16,7 @@ class Barangmasuk extends CI_Controller{
 		$data['join_masuk'] = $this->Barangmasuk_model->joinSup();
 		$data['id_masuk']	= $this->Barangmasuk_model->idMasuk();
 		$data['sup']		= $this->Barangmasuk_model->supplier();
-		$data['tmpbrg']	= $this->Barangmasuk_model->dataBrg();
+		$data['tmpbrg']		= $this->Barangmasuk_model->dataBrg();
 		$this->load->view('template/header');
 		$this->load->view('barang/barang_masuk', $data);
 		$this->load->view('template/footer');
