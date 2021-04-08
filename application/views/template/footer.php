@@ -1,4 +1,4 @@
-<footer><p>All right reserved. Template by: <a href="http://webthemez.com">WebThemez.com</a></p>
+<footer>
 				
         
 				</footer>
@@ -96,11 +96,10 @@
 	<script src="<?php echo base_url(); ?>assets/js/Lightweight-Chart/jquery.chart.js"></script>
     <!-- Custom Js -->
     <script src="<?php echo base_url(); ?>assets/js/custom-scripts.js"></script>
-
       
     <!-- Chart Js -->
-    <script type="<?php echo base_url(); ?>text/javascript" src="assets/js/Chart.min.js"></script>  
-    <script type="<?php echo base_url(); ?>text/javascript" src="assets/js/chartjs.js"></script> 
+    <script src="<?php echo base_url(); ?>assets/js/Chart.min.js"></script>  
+    <script src="<?php echo base_url(); ?>assets/js/chartjs.js"></script> 
 
 </body>
 

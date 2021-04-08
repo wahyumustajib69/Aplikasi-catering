@@ -5,11 +5,14 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> Beranda</a>
+                        <a  class="active-menu" href="<?php echo base_url(); ?>home"><i class="fa fa-home"></i> Beranda</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-archive"></i> Menu Barang<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="<?php echo base_url(); ?>satuan"><i class="fa fa-list-ol"></i> Satuan</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>kategori"><i class="fa fa-list-ul"></i> Kategori</a>
                             </li>
@@ -17,64 +20,34 @@
                                 <a href="<?php echo base_url(); ?>barang"><i class="fa fa-archive"></i> Data Barang</a>
                             </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>supplier"><i class="fa fa-users"></i> Supplier</a>
                     </li> 
                     <li>
-                        <a href="<?php echo base_url(); ?>ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="<?php echo base_url(); ?>barangmasuk"><i class="fa fa-truck"></i> Barang Masuk</a>
                     </li> 
-					 
-					 <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
+                    <li>
+                        <a href="#"><i class="fa fa-shopping-cart"></i> Issue Barang<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="chart.html">Charts JS</a>
+                                <a  href="<?php echo base_url(); ?>issue"><i class="fa fa-shopping-cart"></i> Issue Reguler</a></a>
                             </li>
                             <li>
-                                <a href="morris-chart.html">Morris Chart</a>
-                            </li>
-						</ul>
-					</li>	
-							
-                    <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
+                                <a  href="<?php echo base_url(); ?>issuebc"><i class="fa fa-shopping-cart"></i> Issue Backcarge</a></a>
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+					<li>
+                        <a href="#"><i class="fa fa-money"></i> Sales<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a  href="<?php echo base_url(); ?>sales"><i class="fa fa-money"></i> Sales Reguler</a></a>
+                            </li>
+                            <li>
+                                <a  href="<?php echo base_url(); ?>salesbc"><i class="fa fa-money"></i> Sales Backcarge</a></a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -86,13 +59,8 @@
 		<div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                            Dashboard <small>Welcome John Doe</small>
+                            <i class="fa fa-home"></i> BERANDA<small>Selamat Datang <?php echo strtoupper($this->session->userdata('nama')); ?></small>
                         </h1>
-						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Dashboard</a></li>
-					  <li class="active">Data</li>
-					</ol> 
 									
 		</div>
             <div id="page-inner">
@@ -105,12 +73,16 @@
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>44,023</h3>
-								<small>Daily Visits</small>
+								<h3>
+                                <?php foreach($t_brg as $b){
+                                    echo $b->total;
+                                } ?>                        
+                                </h3>
+								<small>total barang</small>
 							</h3> 
 						</div>
 						<div class="icon">
-						   <i class="fa fa-eye fa-5x red"></i>
+						   <a href="<?php echo base_url() ?>barang"><i class="fa fa-archive fa-5x red"></i></a>
 						</div>
 		 
                         </div>
@@ -122,12 +94,18 @@
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>32,850</h3>
-								<small>Sales</small>
+								<h3>
+                                <?php
+                                foreach($t_sup as $s){
+                                    echo $s->sup;
+                                }
+                                ?>                        
+                                </h3>
+								<small>Supplier</small>
 							</h3> 
 						</div>
 						<div class="icon">
-						   <i class="fa fa-shopping-cart fa-5x blue"></i>
+						   <a href="<?php echo base_url() ?>supplier"><i class="fa fa-users fa-5x blue"></i></a>
 						</div>
 		 
                         </div>
@@ -139,12 +117,18 @@
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>56,150</h3>
-								<small>Comments</small>
+								<h3>
+                                <?php
+                                foreach($b_mas as $b){
+                                    echo $b->masuk;
+                                }
+                                ?>                        
+                                </h3>
+								<small>Barang Masuk</small>
 							</h3> 
 						</div>
 						<div class="icon">
-						   <i class="fa fa-comments fa-5x green"></i>
+						   <a href="<?php echo base_url(); ?>barangmasuk"><i class="fa fa-truck fa-5x green"></i></a>
 						</div>
 		 
                         </div>
@@ -156,12 +140,18 @@
                         <div class="panel panel-primary">
 						<div class="number">
 							<h3>
-								<h3>89,645</h3>
-								<small>Daily Profits</small>
+								<h3>
+                                    <?php
+                                    foreach($issue as $is){
+                                        echo $is->issue;
+                                    }
+                                    ?>
+                                </h3>
+								<small>Issue Barang</small>
 							</h3> 
 						</div>
 						<div class="icon">
-						   <i class="fa fa-user fa-5x yellow"></i>
+						   <a href="<?php echo base_url() ?>issue"><i class="fa fa-shopping-cart fa-5x yellow"></i></a>
 						</div>
 		 
                         </div>
@@ -174,7 +164,7 @@
                             <div class="panel panel-default chartJs">
                                 <div class="panel-heading">
                                     <div class="card-title">
-                                        <div class="title">Line Chart</div>
+                                        <div class="title">Issue Barang</div>
                                     </div>
                                 </div>
                                 <div class="panel-body">
@@ -186,7 +176,7 @@
                             <div class="panel panel-default chartJs">
                                 <div class="panel-heading">
                                     <div class="card-title">
-                                        <div class="title">Bar Chart</div>
+                                        <div class="title">Perbandingan Sales dan Issue Barang</div>
                                     </div>
                                 </div>
                                 <div class="panel-body">
@@ -294,121 +284,6 @@
 				</div> 	
                 <!-- /. ROW  -->
 
-	   
-				
-				
-				
-                <div class="row">
-                    <div class="col-md-4 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Tasks Panel
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">7 minutes ago</span>
-                                        <i class="fa fa-fw fa-comment"></i> Commented on a post
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">16 minutes ago</span>
-                                        <i class="fa fa-fw fa-truck"></i> Order 392 shipped
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">36 minutes ago</span>
-                                        <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has been added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1.23 hour ago</span>
-                                        <i class="fa fa-fw fa-user"></i> A new user has added
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <i class="fa fa-fw fa-globe"></i> Saved the world
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">More Tasks <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-8 col-sm-12 col-xs-12">
-
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Responsive Table Example
-                            </div> 
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>S No.</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>User Name</th>
-                                                <th>Email ID.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>John</td>
-                                                <td>Doe</td>
-                                                <td>John15482</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Kimsila</td>
-                                                <td>Marriye</td>
-                                                <td>Kim1425</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Rossye</td>
-                                                <td>Nermal</td>
-                                                <td>Rossy1245</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Richard</td>
-                                                <td>Orieal</td>
-                                                <td>Rich5685</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>Jacob</td>
-                                                <td>Hielsar</td>
-                                                <td>Jac4587</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>Wrapel</td>
-                                                <td>Dere</td>
-                                                <td>Wrap4585</td>
-                                                <td>name@site.com</td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
                 <!-- /. ROW  -->
 			
 		

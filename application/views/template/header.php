@@ -1,10 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-Template Name: BRILLIANT Bootstrap Admin Template
-Version: 4.5.6
-Author: WebThemez
-Website: http://www.webthemez.com/ 
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -12,7 +6,7 @@ Website: http://www.webthemez.com/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>BRILLIANT Free Bootstrap Admin Template - WebThemez</title>
+    <title>CATERING-KU ONLINE</title>
     <!-- Bootstrap Styles-->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -28,6 +22,8 @@ Website: http://www.webthemez.com/
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/Lightweight-Chart/cssCharts.css"> 
     <!-- TABLE STYLES-->
     <link href="<?php echo base_url(); ?>assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <!--Logo-->
+    <link rel="icon" type="icon" href="<?php echo base_url(); ?>assets/img/logo.jpg">
 </head>
 
 <body>
@@ -60,7 +56,7 @@ Website: http://www.webthemez.com/
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url() ?>login/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
