@@ -1,5 +1,12 @@
 # Aplikasi-catering
-Aplikasi berbasis web CodeIgniter 3, menghitung sales, stok barang, issue reguler dan backcharge, inventory, purchase request
+Aplikasi berbasis web CodeIgniter 3
+1. Stok Barang
+2. Issue Barang
+3. Hitung Sales
+4. Purchase Barang
+5. dll
+
+Query Builder
 
 1. Halaman Login
 ![gambar](https://user-images.githubusercontent.com/32360091/113983251-48391800-987c-11eb-81ea-b614d38bbcda.png)
