@@ -5,9 +5,7 @@ class Kategori_model extends CI_Model{
 	
 	public function TampilKategori(){
 		$this->db->order_by('id_ktg', 'ASC');
-		return $this->db->from('kategori')
-		->get()
-		->result();
+		return $this->db->from('kategori')->get()->result();
 	}
 
 	public function idKategori(){
