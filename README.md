@@ -4,7 +4,7 @@ Aplikasi berbasis web CodeIgniter 3
 2. Issue Barang
 3. Hitung Sales
 4. Purchase Barang
-5. dll
+5. FULL MODAL jadi tidak perlu reload halaman untuk CRUD
 
 Query Builder
 
